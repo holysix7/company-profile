@@ -1,187 +1,404 @@
-<body>
-  <!-- Page Preloder -->
-  <div id="preloder">
-      <div class="loader"></div>
-  </div>
-
-  <!-- Header Section Begin -->
-  @include('layouts.app-header')
-  <!-- Header End -->
-
-    <!-- Services Section Begin -->
-    {{-- <section class="services spad">
-      <div class="container">
-          <div class="row">
-              <div class="col-lg-4">
-                  <div class="services__title">
-                      <div class="section-title">
-                          <span>Our services</span>
-                          <h2>What We do?</h2>
-                      </div>
-                      <p>If you hire a videographer of our team you will get a video professional to make a custom
-                          video for your business and, once the project is over.</p>
-                      <a href="#" class="primary-btn">View all services</a>
-                  </div>
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--  
+    Document Title
+    =============================================
+    -->
+    <title>AA Photoworks Indonesia</title>
+    <!--  
+    Favicons
+    =============================================
+    -->
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('titan-master/assets/images/favicons/apple-icon-57x57.png') }}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('titan-master/assets/images/favicons/apple-icon-60x60.png') }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('titan-master/assets/images/favicons/apple-icon-72x72.png') }}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('titan-master/assets/images/favicons/apple-icon-76x76.png') }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('titan-master/assets/images/favicons/apple-icon-114x114.png') }}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('titan-master/assets/images/favicons/apple-icon-120x120.png') }}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('titan-master/assets/images/favicons/apple-icon-144x144.png') }}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('titan-master/assets/images/favicons/apple-icon-152x152.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('titan-master/assets/images/favicons/apple-icon-180x180.png') }}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('titan-master/assets/images/favicons/android-icon-192x192.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('titan-master/assets/images/favicons/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('titan-master/assets/images/favicons/favicon-96x96.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('titan-master/assets/images/favicons/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset('titan-master/manifest.json') }}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/images/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!--  
+    Stylesheets
+    =============================================
+    
+    -->
+    <!-- Default stylesheets-->
+    <link href="{{ asset('titan-master/assets/lib/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- Template specific stylesheets-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Volkhov:400i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link href="{{ asset('titan-master/assets/lib/animate.css/animate.css') }}" rel="stylesheet">
+    <link href="{{ asset('titan-master/assets/lib/components-font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('titan-master/assets/lib/et-line-font/et-line-font.css') }}" rel="stylesheet">
+    <link href="{{ asset('titan-master/assets/lib/flexslider/flexslider.css') }}" rel="stylesheet">
+    <link href="{{ asset('titan-master/assets/lib/owl.carousel/dist/assets/owl.carousel.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('titan-master/assets/lib/owl.carousel/dist/assets/owl.theme.default.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('titan-master/assets/lib/magnific-popup/dist/magnific-popup.css') }}" rel="stylesheet">
+    <link href="{{ asset('titan-master/assets/lib/simple-text-rotator/simpletextrotator.css') }}" rel="stylesheet">
+    <!-- Main stylesheet and color file-->
+    <link href="{{ asset('titan-master/assets/css/style.css') }}" rel="stylesheet">
+    <link id="color-scheme" href="assets/css/colors/default.css" rel="stylesheet">
+  </head>
+  <body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
+    <main>
+      <div class="page-loader">
+        <div class="loader">Loading...</div>
+      </div>
+      <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#custom-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="index.html">Titan</a>
+          </div>
+          <div class="collapse navbar-collapse" id="custom-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Home</a>
+                <ul class="dropdown-menu">
+                  <li><a href="{{ asset('titan-master/index_mp_fullscreen_video_background.html') }}">Default</a></li>
+                  <li><a href="{{ asset('titan-master/index_op_fullscreen_gradient_overlay.html') }}">One Page</a></li>
+                  <li><a href="{{ asset('titan-master/index_agency.html') }}">Agency</a></li>
+                  <li><a href="{{ asset('titan-master/index_portfolio.html') }}">Portfolio</a></li>
+                  <li><a href="{{ asset('titan-master/index_restaurant.html') }}">Restaurant</a></li>
+                  <li><a href="{{ asset('titan-master/index_finance.html') }}">Finance</a></li>
+                  <li><a href="{{ asset('titan-master/index_landing.html') }}">Landing Page</a></li>
+                  <li><a href="{{ asset('titan-master/index_photography.html') }}">Photography</a></li>
+                  <li><a href="{{ asset('titan-master/index_shop.html') }}">Shop</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Headers</a>
+                <ul class="dropdown-menu">
+                  <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Static Image Header</a>
+                    <ul class="dropdown-menu">
+                      <li><a href="{{ asset('titan-master/index_mp_fullscreen_static.html') }}">Fulscreen</a></li>
+                      <li><a href="{{ asset('titan-master/index_mp_classic_static.html') }}">Classic</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Flexslider Header</a>
+                    <ul class="dropdown-menu">
+                      <li><a href="{{ asset('titan-master/index_mp_fullscreen_flexslider.html') }}">Fulscreen</a></li>
+                      <li><a href="{{ asset('titan-master/index_mp_classic_flexslider.html') }}">Classic</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Video Background Header</a>
+                    <ul class="dropdown-menu">
+                      <li><a href="{{ asset('titan-master/index_mp_fullscreen_video_background.html') }}">Fulscreen</a></li>
+                      <li><a href="{{ asset('titan-master/index_mp_classic_video_background.html') }}">Classic</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Text Rotator Header</a>
+                    <ul class="dropdown-menu">
+                      <li><a href="{{ asset('titan-master/index_mp_fullscreen_text_rotator.html') }}">Fulscreen</a></li>
+                      <li><a href="{{ asset('titan-master/index_mp_classic_text_rotator.html') }}">Classic</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Gradient Overlay Header</a>
+                    <ul class="dropdown-menu">
+                      <li><a href="{{ asset('titan-master/index_mp_fullscreen_gradient_overlay.html') }}">Fulscreen</a></li>
+                      <li><a href="{{ asset('titan-master/index_mp_classic_gradient_overlay.html') }}">Classic</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Pages</a>
+                <ul class="dropdown-menu">
+                  <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">About</a>
+                    <ul class="dropdown-menu">
+                      <li><a href="{{ asset('titan-master/about1.html') }}">About 1</a></li>
+                      <li><a href="{{ asset('titan-master/about2.html') }}">About 2</a></li>
+                      <li><a href="{{ asset('titan-master/about3.html') }}">About 3</a></li>
+                      <li><a href="{{ asset('titan-master/about4.html') }}">About 4</a></li>
+                      <li><a href="{{ asset('titan-master/about5.html') }}">About 5</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Services</a>
+                    <ul class="dropdown-menu">
+                      <li><a href="{{ asset('titan-master/service1.html') }}">Service 1</a></li>
+                      <li><a href="{{ asset('titan-master/service2.html') }}">Service 2</a></li>
+                      <li><a href="{{ asset('titan-master/service3.html') }}">Service 3</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Pricing</a>
+                    <ul class="dropdown-menu">
+                      <li><a href="{{ asset('titan-master/pricing1.html') }}">Pricing 1</a></li>
+                      <li><a href="{{ asset('titan-master/pricing2.html') }}">Pricing 2</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Gallery</a>
+                    <ul class="dropdown-menu">
+                      <li><a href="{{ asset('titan-master/gallery_col_2.html') }}">2 Columns</a></li>
+                      <li><a href="{{ asset('titan-master/gallery_col_3.html') }}">3 Columns</a></li>
+                      <li><a href="{{ asset('titan-master/gallery_col_4.html') }}">4 Columns</a></li>
+                      <li><a href="{{ asset('titan-master/gallery_col_6.html') }}">6 Columns</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Contact</a>
+                    <ul class="dropdown-menu">
+                      <li><a href="{{ asset('titan-master/contact1.html') }}">Contact 1</a></li>
+                      <li><a href="{{ asset('titan-master/contact2.html') }}">Contact 2</a></li>
+                      <li><a href="{{ asset('titan-master/contact3.html') }}">Contact 3</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Restaurant menu</a>
+                    <ul class="dropdown-menu">
+                      <li><a href="{{ asset('titan-master/restaurant_menu1.html') }}">Menu 2 Columns</a></li>
+                      <li><a href="{{ asset('titan-master/restaurant_menu2.html') }}">Menu 3 Columns</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="{{ asset('titan-master/login_register.html') }}">Login / Register</a></li>
+                  <li><a href="{{ asset('titan-master/faq.html') }}">FAQ</a></li>
+                  <li><a href="{{ asset('titan-master/404.html') }}">Page 404</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Portfolio</a>
+                <ul class="dropdown-menu" role="menu">
+                  <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Boxed</a>
+                    <ul class="dropdown-menu">
+                      <li><a href="{{ asset('titan-master/portfolio_boxed_col_2.html') }}">2 Columns</a></li>
+                      <li><a href="{{ asset('titan-master/portfolio_boxed_col_3.html') }}">3 Columns</a></li>
+                      <li><a href="{{ asset('titan-master/portfolio_boxed_col_4.html') }}">4 Columns</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Boxed - Gutter</a>
+                    <ul class="dropdown-menu">
+                      <li><a href="{{ asset('titan-master/portfolio_boxed_gutter_col_2.html') }}">2 Columns</a></li>
+                      <li><a href="{{ asset('titan-master/portfolio_boxed_gutter_col_3.html') }}">3 Columns</a></li>
+                      <li><a href="{{ asset('titan-master/portfolio_boxed_gutter_col_4.html') }}">4 Columns</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Full Width</a>
+                    <ul class="dropdown-menu">
+                      <li><a href="{{ asset('titan-master/portfolio_full_width_col_2.html') }}">2 Columns</a></li>
+                      <li><a href="{{ asset('titan-master/portfolio_full_width_col_3.html') }}">3 Columns</a></li>
+                      <li><a href="{{ asset('titan-master/portfolio_full_width_col_4.html') }}">4 Columns</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Full Width - Gutter</a>
+                    <ul class="dropdown-menu">
+                      <li><a href="{{ asset('titan-master/portfolio_full_width_gutter_col_2.html') }}">2 Columns</a></li>
+                      <li><a href="{{ asset('titan-master/portfolio_full_width_gutter_col_3.html') }}">3 Columns</a></li>
+                      <li><a href="{{ asset('titan-master/portfolio_full_width_gutter_col_4.html') }}">4 Columns</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Masonry</a>
+                    <ul class="dropdown-menu">
+                      <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Boxed</a>
+                        <ul class="dropdown-menu">
+                          <li><a href="{{ asset('titan-master/portfolio_masonry_boxed_col_2.html') }}">2 Columns</a></li>
+                          <li><a href="{{ asset('titan-master/portfolio_masonry_boxed_col_3.html') }}">3 Columns</a></li>
+                          <li><a href="{{ asset('titan-master/portfolio_masonry_boxed_col_4.html') }}">4 Columns</a></li>
+                        </ul>
+                      </li>
+                      <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Full Width</a>
+                        <ul class="dropdown-menu">
+                          <li><a href="{{ asset('titan-master/portfolio_masonry_full_width_col_2.html') }}">2 Columns</a></li>
+                          <li><a href="{{ asset('titan-master/portfolio_masonry_full_width_col_3.html') }}">3 Columns</a></li>
+                          <li><a href="{{ asset('titan-master/portfolio_masonry_full_width_col_4.html') }}">4 Columns</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Hover Style</a>
+                    <ul class="dropdown-menu">
+                      <li><a href="{{ asset('titan-master/portfolio_hover_black.html') }}">Black</a></li>
+                      <li><a href="{{ asset('titan-master/portfolio_hover_gradient.html') }}">Gradient</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Single</a>
+                    <ul class="dropdown-menu">
+                      <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Featured Image</a>
+                        <ul class="dropdown-menu">
+                          <li><a href="{{ asset('titan-master/portfolio_single_featured_image1.html') }}">Style 1</a></li>
+                          <li><a href="{{ asset('titan-master/portfolio_single_featured_image2.html') }}">Style 2</a></li>
+                        </ul>
+                      </li>
+                      <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Featured Slider</a>
+                        <ul class="dropdown-menu">
+                          <li><a href="{{ asset('titan-master/portfolio_single_featured_slider1.html') }}">Style 1</a></li>
+                          <li><a href="{{ asset('titan-master/portfolio_single_featured_slider2.html') }}">Style 2</a></li>
+                        </ul>
+                      </li>
+                      <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Featured Video</a>
+                        <ul class="dropdown-menu">
+                          <li><a href="{{ asset('titan-master/portfolio_single_featured_video1.html') }}">Style 1</a></li>
+                          <li><a href="{{ asset('titan-master/portfolio_single_featured_video2.html') }}">Style 2</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Blog</a>
+                <ul class="dropdown-menu" role="menu">
+                  <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Standard</a>
+                    <ul class="dropdown-menu">
+                      <li><a href="{{ asset('titan-master/blog_standard_left_sidebar.html') }}">Left Sidebar</a></li>
+                      <li><a href="{{ asset('titan-master/blog_standard_right_sidebar.html') }}">Right Sidebar</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Grid</a>
+                    <ul class="dropdown-menu">
+                      <li><a href="{{ asset('titan-master/blog_grid_col_2.html') }}">2 Columns</a></li>
+                      <li><a href="{{ asset('titan-master/blog_grid_col_3.html') }}">3 Columns</a></li>
+                      <li><a href="{{ asset('titan-master/blog_grid_col_4.html') }}">4 Columns</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Masonry</a>
+                    <ul class="dropdown-menu">
+                      <li><a href="{{ asset('titan-master/blog_grid_masonry_col_2.html') }}">2 Columns</a></li>
+                      <li><a href="{{ asset('titan-master/blog_grid_masonry_col_3.html') }}">3 Columns</a></li>
+                      <li><a href="{{ asset('titan-master/blog_grid_masonry_col_4.html') }}">4 Columns</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Single</a>
+                    <ul class="dropdown-menu">
+                      <li><a href="{{ asset('titan-master/blog_single_left_sidebar.html') }}">Left Sidebar</a></li>
+                      <li><a href="{{ asset('titan-master/blog_single_right_sidebar.html') }}">Right Sidebar</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Features</a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="{{ asset('titan-master/alerts-and-wells.html') }}"><i class="fa fa-bolt"></i> Alerts and Wells</a></li>
+                  <li><a href="{{ asset('titan-master/buttons.html') }}"><i class="fa fa-link fa-sm"></i> Buttons</a></li>
+                  <li><a href="{{ asset('titan-master/tabs_and_accordions.html') }}"><i class="fa fa-tasks"></i> Tabs &amp; Accordions</a></li>
+                  <li><a href="{{ asset('titan-master/content_box.html') }}"><i class="fa fa-list-alt"></i> Contents Box</a></li>
+                  <li><a href="{{ asset('titan-master/forms.html') }}"><i class="fa fa-check-square-o"></i> Forms</a></li>
+                  <li><a href="{{ asset('titan-master/icons.html') }}"><i class="fa fa-star"></i> Icons</a></li>
+                  <li><a href="{{ asset('titan-master/progress-bars.html') }}"><i class="fa fa-server"></i> Progress Bars</a></li>
+                  <li><a href="{{ asset('titan-master/typography.html') }}"><i class="fa fa-font"></i> Typography</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Shop</a>
+                <ul class="dropdown-menu" role="menu">
+                  <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Product</a>
+                    <ul class="dropdown-menu">
+                      <li><a href="{{ asset('titan-master/shop_product_col_3.html') }}">3 columns</a></li>
+                      <li><a href="{{ asset('titan-master/shop_product_col_4.html') }}">4 columns</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="{{ asset('titan-master/shop_single_product.html') }}">Single Product</a></li>
+                  <li><a href="{{ asset('titan-master/shop_checkout.html') }}">Checkout</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a class="dropdown-toggle" href="{{ asset('titan-master/documentation.html') }}" data-toggle="dropdown">Documentation</a>
+                <ul class="dropdown-menu">
+                  <li><a href="{{ asset('titan-master/documentation.html#contact') }}">Contact Form</a></li>
+                  <li><a href="{{ asset('titan-master/documentation.html#reservation') }}">Reservation Form</a></li>
+                  <li><a href="{{ asset('titan-master/documentation.html#mailchimp') }}">Mailchimp</a></li>
+                  <li><a href="{{ asset('titan-master/documentation.html#gmap') }}">Google Map</a></li>
+                  <li><a href="{{ asset('titan-master/documentation.html#plugin') }}">Plugins</a></li>
+                  <li><a href="{{ asset('titan-master/documentation.html#changelog') }}">Changelog</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <section class="bg-dark-30 showcase-page-header module parallax-bg" data-background="{{ asset('titan-master/assets/images/showcase_bg.jpg') }}">
+        <div class="titan-caption">
+          <div class="caption-content">
+            <div class="font-alt mb-30 titan-title-size-1">Powerful. Multipurpose.</div>
+            <div class="font-alt mb-40 titan-title-size-4">100+ Layouts</div><a class="section-scroll btn btn-border-w btn-round" href="#demos">See Demos</a>
+          </div>
+        </div>
+      </section>
+      <div class="main showcase-page">
+        <section class="module-extra-small bg-dark">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6 col-md-8 col-lg-9">
+                <div class="callout-text font-alt">
+                  <h4 style="margin-top: 0px; font-;">Start Creating Beautiful Websites</h4>
+                  <p style="margin-bottom: 0px;">Download Titan Free today!</p>
+                </div>
               </div>
-              <div class="col-lg-8">
-                  <div class="row">
-                      <div class="col-lg-6 col-md-6 col-sm-6">
-                          <div class="services__item">
-                              <div class="services__item__icon">
-                                  <img src="{{ asset('template/img/icons/si-1.png') }}" alt="">
-                              </div>
-                              <h4>Motion graphics</h4>
-                              <p>Whether you’re halfway through the editing process, or you haven’t even started, our
-                                  post production services can put the finishing touches.</p>
-                          </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-sm-6">
-                          <div class="services__item">
-                              <div class="services__item__icon">
-                                  <img src="{{ asset('template/img/icons/si-2.png') }}" alt="">
-                              </div>
-                              <h4>Scriptwriting and editing</h4>
-                              <p>Whether you’re halfway through the editing process, or you haven’t even started, our
-                                  post production services can put the finishing touches.</p>
-                          </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-sm-6">
-                          <div class="services__item">
-                              <div class="services__item__icon">
-                                  <img src="{{ asset('template/img/icons/si-3.png') }}" alt="">
-                              </div>
-                              <h4>Video distribution</h4>
-                              <p>Whether you’re halfway through the editing process, or you haven’t even started, our
-                                  post production services can put the finishing touches.</p>
-                          </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-sm-6">
-                          <div class="services__item">
-                              <div class="services__item__icon">
-                                  <img src="{{ asset('template/img/icons/si-4.png') }}" alt="">
-                              </div>
-                              <h4>Video hosting</h4>
-                              <p>Whether you’re halfway through the editing process, or you haven’t even started, our
-                                  post production services can put the finishing touches.</p>
-                          </div>
-                      </div>
-                  </div>
+              <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="callout-btn-box"><a class="btn btn-border-w btn-circle" href="https://themewagon.com/themes/titan/">Downlaod Free</a></div>
               </div>
+            </div>
           </div>
+        </section>
+        <section class="module-medium" id="demos">
+          <div class="container">
+            <div class="row multi-columns-row">
+              <div class="col-md-4 col-sm-6 col-xs-12"><a class="content-box" href="{{ asset('titan-master/index_mp_fullscreen_video_background.html') }}">
+                  <div class="content-box-image"><img src="{{ asset('titan-master/assets/images/screenshots/main_demo.jpg') }}" alt="Main Demo"></div>
+                  <h3 class="content-box-title font-serif">Main Demo</h3></a></div>
+              <div class="col-md-4 col-sm-6 col-xs-12"><a class="content-box" href="{{ asset('titan-master/index_agency.html') }}">
+                  <div class="content-box-image"><img src="{{ asset('titan-master/assets/images/screenshots/agency.jpg') }}" alt="Agency"></div>
+                  <h3 class="content-box-title font-serif">Agency</h3></a></div>
+              <div class="col-md-4 col-sm-6 col-xs-12"><a class="content-box" href="{{ asset('titan-master/index_portfolio.html') }}">
+                  <div class="content-box-image"><img src="{{ asset('titan-master/assets/images/screenshots/portfolio.jpg') }}" alt="Portfolio"></div>
+                  <h3 class="content-box-title font-serif">Portfolio</h3></a></div>
+              <div class="col-md-4 col-sm-6 col-xs-12"><a class="content-box" href="{{ asset('titan-master/index_restaurant.html') }}">
+                  <div class="content-box-image"><img src="{{ asset('titan-master/assets/images/screenshots/restaurant.jpg') }}" alt="Restaurant"></div>
+                  <h3 class="content-box-title font-serif">Restaurant</h3></a></div>
+              <div class="col-md-4 col-sm-6 col-xs-12"><a class="content-box" href="{{ asset('titan-master/index_finance.html') }}">
+                  <div class="content-box-image"><img src="{{ asset('titan-master/assets/images/screenshots/finance.jpg') }}" alt="Finance"></div>
+                  <h3 class="content-box-title font-serif">Finance</h3></a></div>
+              <div class="col-md-4 col-sm-6 col-xs-12"><a class="content-box" href="{{ asset('titan-master/index_landing.html') }}">
+                  <div class="content-box-image"><img src="{{ asset('titan-master/assets/images/screenshots/landing.jpg') }}" alt="Landing"></div>
+                  <h3 class="content-box-title font-serif">Landing</h3></a></div>
+              <div class="col-md-4 col-sm-6 col-xs-12"><a class="content-box" href="{{ asset('titan-master/index_photography.html') }}">
+                  <div class="content-box-image"><img src="{{ asset('titan-master/assets/images/screenshots/photography.jpg') }}" alt="Photography"></div>
+                  <h3 class="content-box-title font-serif">Photography</h3></a></div>
+              <div class="col-md-4 col-sm-6 col-xs-12"><a class="content-box" href="{{ asset('titan-master/index_shop.html') }}">
+                  <div class="content-box-image"><img src="{{ asset('titan-master/assets/images/screenshots/shop.jpg') }}" alt="Shop"></div>
+                  <h3 class="content-box-title font-serif">Shop</h3></a></div>
+              <div class="col-md-4 col-sm-6 col-xs-12"><a class="content-box" href="{{ asset('titan-master/index_op_fullscreen_gradient_overlay.html') }}">
+                  <div class="content-box-image"><img src="{{ asset('titan-master/assets/images/screenshots/one_page.jpg') }}" alt="One Page"></div>
+                  <h3 class="content-box-title font-serif">One Page</h3></a></div>
+            </div>
+          </div>
+        </section>
+        <section class="module-extra-small bg-dark">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6 col-md-8 col-lg-9">
+                <div class="callout-text font-alt">
+                  <h4 style="margin-top: 0px;">Start Creating Beautiful Websites</h4>
+                  <p style="margin-bottom: 0px;">Download Titan Free today!</p>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="callout-btn-box"><a class="btn btn-border-w btn-circle" href="https://themewagon.com/themes/titan/">Downlaod Free</a></div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
-    </section> --}}
-    <!-- Services Section End -->
-
-  <div class="tab-content" id="custom-tabs-three-tabContent">
-    <div class="tab-pane fade active show" id="custom-tabs-three-home" role="tabpanel" aria-labelledby="custom-tabs-three-home-tab">
-      @include('layouts.contents.app-home')
-    </div>
-    <div class="tab-pane fade" id="custom-tabs-three-about" role="tabpanel" aria-labelledby="custom-tabs-three-about-tab">
-      @include('layouts.contents.app-about')
-    </div>
-    <div class="tab-pane fade" id="custom-tabs-three-portfolio" role="tabpanel" aria-labelledby="custom-tabs-three-portfolio-tab">
-      @include('layouts.contents.app-portfolio')
-    </div>
-    <div class="tab-pane fade" id="custom-tabs-three-services" role="tabpanel" aria-labelledby="custom-tabs-three-services-tab">
-      @include('layouts.contents.app-services')
-    </div>
-    <div class="tab-pane fade" id="custom-tabs-three-contact" role="tabpanel" aria-labelledby="custom-tabs-three-contact-tab">
-      @include('layouts.contents.app-contact')
-    </div>
-  </div>
-  <!-- Footer Section Begin -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__top">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="footer__top__logo">
-              <a href="#"><img src="{{ asset('template/img/logo.png') }}" alt=""></a>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="footer__top__social d-flex justify-content-end">
-              {{-- <a href="#"><i class="fa fa-facebook"></i></a>
-              <a href="#"><i class="fa fa-twitter"></i></a>
-              <a href="#"><i class="fa fa-dribbble"></i></a> --}}
-              <a href="https://www.instagram.com/bosmatkabaret/" class="d-flex justify-content-center align-items-center" target="_blank"><i class="fa fa-instagram"></i></a>
-              <a href="https://www.youtube.com/channel/UCUBgcTPAocu03boF9Mr8jrQ" class="d-flex justify-content-center align-items-center" target="_blank"><i class="fa fa-youtube-play"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="footer__option">
-        <div class="row">
-          <div class="col-lg-4 col-md-6 col-sm-6">
-            <div class="footer__option__item">
-              <h5>About us</h5>
-              <p>Formed in 2006 by Matt Hobbs and Cael Jones, Videoprah is an award-winning, full-service production company specializing.</p>
-              <a href="#" class="read__more">Read more <span class="arrow_right"></span></a>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-3 col-sm-3">
-            <div class="footer__option__item">
-              <h5>Who we are</h5>
-              <ul>
-                <li><a href="#">Team</a></li>
-                <li><a href="#">Carrers</a></li>
-                <li><a href="#">Contact us</a></li>
-                <li><a href="#">Locations</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-3 col-sm-3">
-            <div class="footer__option__item">
-              <h5>Our work</h5>
-              <ul>
-                <li><a href="#">Feature</a></li>
-                <li><a href="#">Latest</a></li>
-                <li><a href="#">Browse Archive</a></li>
-                <li><a href="#">Video for web</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-12">
-            <div class="footer__option__item">
-              <h5>Newsletter</h5>
-              <p>Videoprah is an award-winning, full-service production company specializing.</p>
-              <form action="#">
-                <input type="text" placeholder="Email">
-                <button type="submit"><i class="fa fa-send"></i></button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="footer__copyright">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <p class="footer__copyright__text">&copy; Copyright Bosmat Cabaret. All rights reserved 
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <!-- Footer Section End -->
-
-  <!-- Js Plugins -->
-  <script src="{{ asset('template/js/jquery-3.3.1.min.js') }}"></script>
-  <script src="{{ asset('template/js/bootstrap.min.js') }}"></script>
-  <script src="{{ asset('template/js/jquery.magnific-popup.min.js') }}"></script>
-  <script src="{{ asset('template/js/mixitup.min.js') }}"></script>
-  <script src="{{ asset('template/js/masonry.pkgd.min.js') }}"></script>
-  <script src="{{ asset('template/js/jquery.slicknav.js') }}"></script>
-  <script src="{{ asset('template/js/owl.carousel.min.js') }}"></script>
-  <script src="{{ asset('template/js/main.js') }}"></script>
-  <script type="text/javascript">
-    $(document).ready(function(){
-      $('.tab-item').on('click', function(){
-        $('.tab-item').removeClass('active')
-        var current = $('.active')
-        current[0].className = current[0].className.replace('active', '')
-        $(this)[0].className += ' active'
-      })
-    })
-  </script>
-</body>
+      <div class="scroll-up"><a href="#totop"><i class="fa fa-angle-double-up"></i></a></div>
+    </main>
+    <!--  
+    JavaScripts
+    =============================================
+    -->
+    <script src="{{ asset('titan-master/assets/lib/jquery/dist/jquery.js') }}"></script>
+    <script src="{{ asset('titan-master/assets/lib/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('titan-master/assets/lib/wow/dist/wow.js') }}"></script>
+    <script src="{{ asset('titan-master/assets/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js') }}"></script>
+    <script src="{{ asset('titan-master/assets/lib/isotope/dist/isotope.pkgd.js') }}"></script>
+    <script src="{{ asset('titan-master/assets/lib/imagesloaded/imagesloaded.pkgd.js') }}"></script>
+    <script src="{{ asset('titan-master/assets/lib/flexslider/jquery.flexslider.js') }}"></script>
+    <script src="{{ asset('titan-master/assets/lib/owl.carousel/dist/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('titan-master/assets/lib/smoothscroll.js') }}"></script>
+    <script src="{{ asset('titan-master/assets/lib/magnific-popup/dist/jquery.magnific-popup.js') }}"></script>
+    <script src="{{ asset('titan-master/assets/lib/simple-text-rotator/jquery.simple-text-rotator.min.js') }}"></script>
+    <script src="{{ asset('titan-master/assets/js/plugins.js') }}"></script>
+    <script src="{{ asset('titan-master/assets/js/main.js') }}"></script>
+  </body>
+</html>
